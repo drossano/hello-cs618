@@ -34,8 +34,9 @@
   },
   "lint-staged": {
     "**/*.{js, jsx}": [
-      "npx prettier --write",
-      "npx prettier --fix"
+      "npx prettier --fix",
+      "npx prettier --write"
+
     ]
   }
 }
