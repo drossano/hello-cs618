@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "lint": "eslint src",
-    "preview": "vite preview",
-    "prepare": "husky install"
+    "lint": "eslint src"
   },
   "dependencies": {
     "mongodb": "^6.19.0",
