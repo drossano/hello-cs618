@@ -27,3 +27,15 @@ export async function listPostsByTag(tags, options) {
 export async function getPostByID(postId) {
   return await Post.findById(postId)
 }
+
+export async function updatePost(postId, { title, author, contents, tags }) {
+  return await Post.findByIdAndUpdate(
+    { _id: postId },
+    { $set: { title, author, contents, tags } },
+    { new: true },
+  )
+}
+
+export async function deletePost(postId) {
+  return await Post.deleteOne({ _id: postId })
+}
