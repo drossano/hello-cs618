@@ -23,3 +23,7 @@ export async function listPostsByAuthor(author, options) {
 export async function listPostsByTag(tags, options) {
   return await listPosts({ tags }, options)
 }
+
+export async function getPostByID(postId) {
+  return await Post.findById(postId)
+}

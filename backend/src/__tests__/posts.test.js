@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 import { describe, expect, test, beforeEach } from '@jest/globals'
 import {
   createPost,
+  getPostByID,
   listAllPosts,
   listPostsByAuthor,
   listPostsByTag,
@@ -27,6 +28,17 @@ beforeEach(async () => {
     const createPost = new Post(post)
     createdSamplePosts.push(await createPost.save())
   }
+})
+
+describe('getting a post', () => {
+  test('sholud return the full post', async () => {
+    const post = await getPostByID(createdSamplePosts[0]._id)
+    expect(post.toObject()).toEqual(createdSamplePosts[0].toObject())
+  })
+  test('should fail if id does not exist', async () => {
+    const post = await getPostByID('000000000000000000000000')
+    expect(post).toEqual(null)
+  })
 })
 
 describe('listing posts', () => {
