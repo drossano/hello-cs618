@@ -16,7 +16,8 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"mongodb.mongodb-vscode",
-				"Orta.vscode-jest"
+				"Orta.vscode-jest",
+				"esbenp.prettier-vscode"
 			]
 		}
 	},
